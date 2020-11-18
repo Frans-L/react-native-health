@@ -68,8 +68,9 @@
 
             return;
         } else {
-            NSLog(@"error getting samples: %@", error);
-            callback(@[RCTMakeError(@"error getting samples", nil, nil)]);
+            NSString *errMsg = [NSString stringWithFormat:@"Error getting samples: %@", error];
+            NSLog(errMsg);
+            callback(@[RCTMakeError(errMsg, nil, nil)]);
 
             return;
         }
